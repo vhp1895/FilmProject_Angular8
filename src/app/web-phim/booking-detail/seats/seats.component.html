@@ -1,0 +1,54 @@
+<div class="seatinfo">
+    <ul>
+        <li class="selectedseat">
+            Selected Seats
+        </li>
+        <li class="soldseat">
+            Sold
+        </li>
+        <li class="classicseat">
+            Classic
+        </li>
+        <li class="vipseat">
+            VIP
+        </li>
+    </ul>
+</div>
+<div class="seatinglayout">
+    <div class="slhead">
+        <h6>Screen This Way</h6>
+    </div>
+    <div class="slbody" id="scrollbar">
+        <!--Thông tin ghế-->
+        <div class="slbody-content">
+            <ul class="left">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>J</li>
+                <li>K</li>
+            </ul>
+            <ng-container *ngFor="let seat of seatList;let i=index">
+                <app-seat [seatInput]="seat"></app-seat>
+                <br *ngIf="(i+1)%16===0" />
+            </ng-container>
+            <ul class="right">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>J</li>
+                <li>K</li>
+            </ul>
+        </div>
+    </div>
+</div>

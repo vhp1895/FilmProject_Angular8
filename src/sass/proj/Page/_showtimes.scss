@@ -1,0 +1,70 @@
+.showtimes {
+    padding-top: 105px;
+    .cinema-location-block {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        .panel {
+            background: #000;
+            margin-bottom: 10px;
+            .panel-heading {
+                .panel-title {
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: $color-major;
+                    padding: 32px 30px 32px 0;
+                    font-weight: 600;
+                }
+                
+            }
+            .panel-body {
+                padding: 0 85px 0 65px;
+                .movie-list {
+                    display: table;
+                    widows: 100%;
+                    border-top: 1px solid #191919;
+                    padding: 60px 0 50px;
+                    &:first-child {
+                        padding-top: 0;
+                        border-top: none;
+                    }
+                    .movie-col1 {
+                        display: table-cell;
+                        width: 253px;
+                        padding-right: 30px;
+                        vertical-align: top;
+                        h3 {
+                            font-size: 15px;
+                            line-height: 18px;
+                            font-weight: bold;
+                            padding-top: 15px;
+                            text-transform: capitalize;
+                            color: #fff;
+                        }
+                    }
+                    .movie-col2 {
+                        display: table-cell;
+                        padding: 0px;
+                        vertical-align: top;
+                        color: red;
+                    }
+                }
+                .movie-list:empty {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+::ng-deep .slick-track {
+    margin: 0;
+}
+::ng-deep .panel {
+    .mat-expansion-panel-header {
+        padding: 0 47px 0 80px;
+        // height: 84px!important;
+    }
+    .mat-expansion-indicator::after {
+        color: #fff;
+    }
+}

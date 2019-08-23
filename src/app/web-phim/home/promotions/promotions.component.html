@@ -1,0 +1,21 @@
+<div class="movieclub-promotion">
+  <div class="promotion promotion__1">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let promo of promoList1">
+        <app-promo-item [PromoItem]="promo"></app-promo-item>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <div class="promotion promotion__2">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let promo of promoList2">
+        <app-promo-item [PromoItem]="promo"></app-promo-item>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <div class="container">
+    <div class="btn-view-group">
+      <a routerLink="" class="btn-view">View all Promotions</a>
+    </div>
+  </div>
+</div>

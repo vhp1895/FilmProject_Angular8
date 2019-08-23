@@ -4,14 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './_core/shared/material.module';
+
+import { WebPhimModule } from './web-phim/web-phim.module';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

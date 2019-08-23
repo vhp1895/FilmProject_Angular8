@@ -1,0 +1,53 @@
+<div class="showtimes">
+    <!-- <div class="show-date-row">
+        <div class="container">
+            <ul class="show-date-block">
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="slideConfig">
+                    <li ngxSlickItem *ngFor="let date of weekDates"
+                        [ngClass]="{'active': activateDate.getTime() === date.getTime()}">
+                        <a (click)="chooseDate(date)">
+                            {{date | date: "EEE"}}
+                            <span>{{date | date: "dd"}}</span>
+                        </a>
+                    </li>
+                </ngx-slick-carousel>
+            </ul>
+        </div>
+    </div> -->
+    <app-show-date-row (activateDate)="chooseDate($event)"></app-show-date-row>
+    <div class="container">
+        <div class="cinema-location-block">
+            <mat-accordion>
+                <mat-expansion-panel class="panel" *ngFor="let cinema of showtimes, let i = index" [expanded]="i === 0">
+                    <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{cinema.theaterName}}</h2>
+                        </div>
+
+                    </mat-expansion-panel-header>
+                    <div class="panel-body">
+                        <ng-container *ngFor="let movie of cinema.movieList">
+                            <ng-container *ngFor="let date of movie.showtimes">
+                                <div class="movie-list" *ngIf="compareDate(date.date)">
+                                    <div class="movie-col1">
+                                        <figure>
+                                            <img [src]="movie.image">
+                                        </figure>
+                                        <h3>{{movie.movieName}}</h3>
+                                    </div>
+                                    <div class="movie-col2">
+                                        <div class="movie-timing">
+                                            <ul>
+                                                <app-button-showtime [movieName]="movie.movieName" [theaterName]="cinema.theaterName" [showtime]="showtime" *ngFor="let showtime of date.showtime"></app-button-showtime>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

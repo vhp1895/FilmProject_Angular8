@@ -1,0 +1,15 @@
+<div class="show-date-row">
+    <div class="container">
+        <ul class="show-date-block">
+            <ngx-slick-carousel #slickModal="slick-carousel" [config]="slideConfig">
+                <li ngxSlickItem *ngFor="let date of weekDates"
+                    [ngClass]="{'active': chosenDate.getTime() === date.getTime()}">
+                    <a (click)="chooseDate(date)">
+                        {{date | date: "EEE"}}
+                        <span>{{date | date: "dd"}}</span>
+                    </a>
+                </li>
+            </ngx-slick-carousel>
+        </ul>
+    </div>
+</div>

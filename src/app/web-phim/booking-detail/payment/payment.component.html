@@ -1,0 +1,52 @@
+<div class="payment">
+    <h2>Payment Option</h2>
+    <div class="payment-row">
+        <ul class="payment-list">
+            <li>
+                <div class="col1">
+                    <a (click)="payment()" [ngClass]="{'active': focus}">
+                        <figure>
+                            <img src="assets/images/credit.png">
+                        </figure>
+                        <span> Credit / Debit Cards OR Online Bank Payments </span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <div class="order-sumary">
+            <h2 class="om-title">
+                Order Summary
+            </h2>
+            <div class="om-body">
+                <h3>Ticket</h3>
+                <ul>
+                    <li *ngFor="let selectticket of OrderDetails.selectedTicketInfo">
+                        <span class="col1">{{selectticket.seatType | uppercase}}</span>
+                        <span class="col2">{{selectticket.qty}} X {{selectticket.price | number}} VND</span>
+                        <span class="col3">{{(selectticket.qty * selectticket.price) | number}} VND</span>
+                    </li>
+                    <li class="sub-total">
+                        <span class="col1">Sub Total</span>
+                        <span class="col2">{{SubTotalTix | number}} VND</span>
+                    </li>
+                </ul>
+                <h3 *ngIf="OrderDetails.selectedFnbInfo.length">F&B</h3>
+                <ul *ngIf="OrderDetails.selectedFnbInfo.length">
+                    <li *ngFor="let selectfood of OrderDetails.selectedFnbInfo">
+                        <span class="col1">{{selectfood.name}}</span>
+                        <span class="col2">{{selectfood.qty}} X {{selectfood.price | number}} VND</span>
+                        <span class="col3">{{(selectfood.qty * selectfood.price) | number}} VND</span>
+                    </li>
+                    <li class="sub-total">
+                        <span class="col1">Sub Total</span>
+                        <span class="col2">{{SubTotalFnb | number}} VND</span>
+                    </li>
+                </ul>
+                <div class="total-price">
+                    <span class="col1">Total</span>
+                    <span class="col2">{{totalPrice | number}} VND</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="banner-slider">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let slide of sliderList">
+      <app-slider-item [SliderItem]="slide"></app-slider-item>
+    </ng-template>
+  </owl-carousel-o>
+</div>

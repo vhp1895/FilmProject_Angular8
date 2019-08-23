@@ -1,0 +1,12 @@
+@mixin text($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin MediaQuery($breakpoint) {
+    $query: map-get($breakpoints, $breakpoint);
+    @media (max-width: #{$query} )  {
+        @content;
+    } 
+}

@@ -1,0 +1,98 @@
+// .quickbook {
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+//     left: 0;
+//     z-index: 102;
+//     min-height: 69px;
+//     transition: all 0.5s;
+//     display: flex;
+//     .quickbook-col1 {
+//         h3 {
+//             font-size: 21px;
+//             line-height: 69px;
+//             font-weight: bold;
+//             color: #fff;
+//             padding: 0 46px 0 44px;
+//             text-transform: uppercase;
+//             position: relative;
+//             &::before {
+//                 position: absolute;
+//                 content: '';
+//                 top: 50%;
+//                 left: 0;
+//                 width: 41px;
+//                 height: 29px;
+//                 background: url('../../../../assets/images/sprit.png') no-repeat;
+//                 background-position: 0 -313px;
+//                 transform: translateY(-50%);
+//             }
+//         }
+//         padding-left: 223px;
+//         background: #000;
+//     }
+//     .quickbook-col2 {
+//         display: flex;
+//         .quickbook-lists {
+//             display: flex;
+//             position: relative;
+//             z-index: 1;
+//             background: #fff;
+//             &::before {
+//                 position: absolute;
+//                 content: '';
+//                 top: 0;
+//                 left: -21px;
+//                 width: 0px;
+//                 height: 0px;
+//                 border-top: 69px solid transparent;
+//                 border-right: 21px solid #fff;
+//             }
+//             &::after {
+//                 position: absolute;
+//                 content: '';
+//                 top: 0;
+//                 left: 100%;
+//                 width: 0;
+//                 height: 0;
+//                 border-top: 69px solid #fff;
+//                 border-right: 21px solid transparent;
+
+//             }
+//             .selectBox {
+//                 padding: 0 50px;
+//             }
+//         }    
+//     }
+//     .quickbook-col3 {
+//         background: #ed1c24;
+//         position: relative;
+//         &::before {
+//             position: absolute;
+//             content: '';
+//             top: 0;
+//             left: -30px;
+//             width: 500%;
+//             height: 100%;
+//             background: #ed1c24;
+//             z-index: -1;
+//         }
+//         .booknow-btn {
+            
+//             .btn-bknow {
+//                 font-size: 25px;
+//                 line-height: 69px;
+//                 color: #fff;
+//                 padding-left: 44px;
+//                 text-transform: uppercase;
+//                 position: relative;
+//                 padding-right: 10px;
+//                 background: transparent;
+//                 border: 0;
+//                 &:disabled {
+//                     color: rgba(255, 255, 255, 0.6);
+//                 }
+//             }
+//         }
+//     }
+// }

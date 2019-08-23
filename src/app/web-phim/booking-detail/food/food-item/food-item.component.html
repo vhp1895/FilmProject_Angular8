@@ -1,0 +1,34 @@
+<div class="fnb-detail">
+    <div class="fnb-food-item">
+        <figure>
+            <img [src]="FoodItem.img"/>
+            
+        </figure>
+    </div>
+    <div class="fnb-qty">
+        <h3>
+            {{FoodItem.name}}
+            <span class="fd-info">
+                <span class="fd-info-cont">
+                    <ul>
+                        <li>1 Large Hollywood Popcorn</li>
+                        <li>1 Confectionery</li>
+                        <li>2 Regular Soft Drinks or Mineral Water</li>
+                        <li>Normal Price: RM 28.70</li>
+                        <li>Save: RM 10.70</li>
+                    </ul>
+                </span>
+            </span>
+        </h3>
+        <ul class="fty-block">
+            <li>
+                <p class="fd-price">{{FoodItem.price | number}} VND</p>
+                <div class="qty-select" >
+                    <button [disabled]="!quantity" (click)="changeQty(false)" class="btns btnminus" title="Minus Ticket"></button>
+                    <input type="text" [value]="quantity" maxlength="3" readonly>
+                    <button (click)="changeQty(true)" class="btns btnplus" title="Add Ticket"></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

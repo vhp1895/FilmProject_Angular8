@@ -1,0 +1,123 @@
+<header id="header" [ngClass]="{'accountHeader': getRouteAccount(), 'innerPageHeader': getRouteInner()}">
+  <div class="container">
+
+    <nav class="navbar navbar-expand-lg">
+
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/images/tgv-logo-02.png" alt="logo" routerLink="#">
+      </a>
+
+      <div class="navbar-collapse menu">
+        <ul class="navbar-nav">
+          <li class="nav-item" [ngClass]="{'active': router.url.includes('movies')}">
+            <a class="nav-link" href="/movies">Movies</a>
+          </li>
+          <li class="nav-item" [ngClass]="{'active': router.url.includes('showtimes')}">
+            <a class="nav-link" href="/showtimes">Showtimes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Promotions</a>
+          </li>
+        </ul>
+
+        <div class="profile" *ngIf="account; else login1">
+            <a class="profile-name">
+                <p>
+                    Hello
+                    <span>{{name}}</span>
+                </p>
+                <figure>
+                    <img src="../../../assets/images/user-profile.png">
+                </figure>
+            </a>
+            <ul class="profile-drop-down">
+                <li class="my-account">
+                    <a href="">Your Profile</a>
+                </li>
+                <li class="log-out">
+                    <a (click)="logOut()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+
+        <ng-template #login1>
+          <div class="right-nav">
+            <figure>
+              <img src="../../../assets/images/movie-club-header-icon.png">
+            </figure>
+            <ul>
+              <li>
+                <a routerLink="/account/register">Register</a>
+              <li>
+                <a routerLink="/account/signin">Sign In</a>
+              </li>
+            </ul>
+          </div>
+        </ng-template>
+      </div>
+    </nav>
+    <div class="burger-menu">
+      <a class="burger-menu-icon" (click)="sidebarOpen = !sidebarOpen">&nbsp;</a>
+    </div>
+    <div class="back-btn">
+      <a class="back-icon" href="/">&nbsp;</a>
+    </div>
+  </div>
+  <div class="sidebar" [ngClass]="{'active': sidebarOpen}">
+    <div class="sidebar-menu">
+      <a class="sidebar-close" (click)="sidebarOpen = !sidebarOpen">&nbsp;</a>
+
+      <div class="profile" *ngIf="account; else login2">
+          <a class="profile-name">
+              <p>
+                  Hello
+                  <span>{{name}}</span>
+              </p>
+              <figure>
+                  <img src="../../../assets/images/user-profile.png">
+              </figure>
+          </a>
+          <ul class="profile-drop-down">
+              <li class="my-account">
+                  <a href="">Your Profile</a>
+              </li>
+              <li class="log-out">
+                  <a (click)="logOut()">Log Out</a>
+              </li>
+          </ul>
+      </div>
+      <ng-template #login2>
+        <div class="sidebar-login">
+          <p class="login-title">
+            Sign up now and enjoy exclusive benefits
+            <a href="">
+              only available for
+            </a>
+          </p>
+          <ul>
+            <li class="sign-in">
+              <span>New to <strong>TGV?</strong></span>
+              <a routerLink="/account/register">Join Now</a>
+            </li>
+            <li class="log-in">
+              <span>Already a member?</span>
+              <a routerLink="/account/signin">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </ng-template>
+
+      <ul>
+        <li class="movies-link">
+          <a href="/movies">Movies</a>
+        </li>
+        <li class="showtimes-link">
+          <a href="/showtimes">Showtimes</a>
+        </li>
+        <li class="promotions-link">
+          <a routerLink="/">Promotions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

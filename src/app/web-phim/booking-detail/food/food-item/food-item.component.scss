@@ -1,0 +1,137 @@
+// .fnb-detail {
+//     text-align: center;
+//     position: relative;
+//     .fnb-food-item {
+//         transition: all 0.5s;
+//         figure img{
+//             border-top-left-radius: 5px;
+//             border-top-right-radius: 5px;
+//             display: block;
+//             max-width: 100%;
+//             height: auto;
+//         }
+//     }
+//     .fnb-qty {
+//         padding: 15px 25px 9px;
+//         background: #232323;
+//         border-radius: 5px;
+//         margin-top: -18px;
+//         position: relative;
+//         h3 {
+//             font-size: 20px;
+//             line-height: 22px;
+//             font-weight: bold;
+//             padding-bottom: 5px;
+//             border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+//             min-height: 45px;
+//             .fd-info {
+//                 background: url('../../../../../assets/images/icon-info.png') no-repeat;
+//                 height: 16px;
+//                 width: 16px;
+//                 cursor: pointer;
+//                 display: inline-block;
+//                 position: relative;
+//                 margin-left: 3px;
+//                 vertical-align: middle;
+//                 &:hover {
+//                     .fd-info-cont {
+//                         transform: scaleY(1);
+//                     }
+//                 }
+//                 .fd-info-cont {
+//                     position: absolute;
+//                     bottom: 40px;
+//                     right: -20px;
+//                     font-size: 12px;
+//                     width: 215px;
+//                     color: #000;
+//                     background: #fff;
+//                     padding: 10px 18px;
+//                     border-radius: 5px;
+//                     transform: scaleY(0);
+//                     transition: ease-out 0.25s;
+//                     z-index: 1;
+//                     transform-origin: bottom;
+//                     ul {
+//                         text-align: left;
+//                         padding-left: 10px;
+//                         li {
+//                             list-style-type: disc;
+//                         }
+//                     }
+//                     &::before {
+//                         content: '';
+//                         position: absolute;
+//                         border-top: 23px solid #fff;
+//                         border-right: 10px solid transparent;
+//                         border-left: 10px solid transparent;
+//                         bottom: -20px;
+//                         right: 16px;
+//                     }
+//                 }
+//             }
+//         }
+//         .fty-block {
+//             padding-top: 14px;
+//             .fd-price {
+//                 font-size: 15px;
+//                 font-weight: bold;
+//                 line-height: 20px;
+//                 color: #ed1c24;
+//                 display: inline-block;
+//                 vertical-align: middle;
+//             }
+//             .qty-select {
+//                 display: inline-block;
+//                 height: 42px;
+//                 margin-left: 25px;
+//                 width: 138px;
+//                 vertical-align: middle;
+//                 position: relative;
+//                 // float: none;
+//                 input {
+//                     background: none;
+//                     color: #fff;
+//                     font-size: 20px;
+//                     margin-left: 0;
+//                     width: 50px;
+//                     height: 100%;
+//                     padding: 0;
+//                     text-align: center;
+//                     border: 0;
+//                     &::selection {
+//                         background: transparent;
+//                     }
+//                 }
+//                 .btns {
+//                     border: 1px solid #fff;
+//                     width: 42px;
+//                     height: 42px;
+//                     border-radius: 50%;
+//                     top: 0;
+//                     position: absolute;
+//                     background: transparent;
+//                 }
+//                 .btnminus {
+//                     left: 0;
+//                 }
+//                 .btnminus::before, .btnplus::before, .btnplus::after {
+//                     position: absolute;
+//                     content: '';
+//                     top: 50%;
+//                     left: 50%;
+//                     width: 17px;
+//                     height: 2px;
+//                     background-color: #fff;
+//                     transform: translate(-50%, -50%);
+//                 }
+//                 .btnplus {
+//                     right: 0;
+//                     &::after {
+//                         transform: translate(-50%, -50%) rotate(90deg);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

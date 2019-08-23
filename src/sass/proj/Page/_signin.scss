@@ -1,0 +1,111 @@
+
+.signin {
+    padding-top: 105px;
+    .signin-row {
+        padding: 90px 0 50px;
+        .col2, .col1 {
+            width: 50%;
+            display: inline-block;
+        }
+        .col2 {
+            padding-left: 36px;
+            float: right;
+        }
+        .col1 {
+            padding-right: 75px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .signin-block {
+        background: black;
+        border-radius: 5px;
+        position: relative;
+        .sign-key {
+            background: url('../../assets/images/account/ic-sprite.png') no-repeat center center;
+            background-position: 0 0;
+            width: 91px;
+            height: 71px;
+            display: inline-block;
+            position: relative;
+            left: -22px;
+            top: 19px;
+            margin-right: 18px;
+            vertical-align: middle;
+            &::before {
+                content: '';
+                background: url('../../assets/images/account/ic-sprite.png') no-repeat center center;
+                background-position: -143px 0;
+                width: 37px;
+                height: 32px;
+                position: absolute;
+                left: 23px;
+                bottom: 13px;
+            }
+        }
+        .signin-table {
+            display: table;
+            width: 475px;
+            margin: 0 auto;
+            height: 690px;
+            .signin-table-cell {
+                display:table-cell;
+                vertical-align: middle;
+                .welcome-block {
+                    h4 {
+                        font-size: 37px;
+                        font-weight: bold;
+                    }
+                    .form-group {
+                        margin-top: 26px;
+                        width:100%;
+                        input::placeholder {
+                            color: white;
+                        }
+                    }
+                    .form-check {
+                        padding: 37px 0 0;
+                    }
+                    .form-link {
+                        padding-top: 25px;
+                        .submitBtn {
+                            font-size: 22px;
+                            line-height: 46px;
+                            background: $color-major;
+                            color: #fff;
+                            display: inline-block;
+                            transition: all 0.5s;
+                            &:hover {
+                                color: $color-major;
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: #898989;
+  }
+  
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: transparent !important;
+}
+
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+::ng-deep .mat-form-field-invalid .mat-form-field-label {
+    /*change color of label*/
+    color: red !important;
+}

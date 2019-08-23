@@ -1,0 +1,90 @@
+<footer class="footer"  [ngClass]="{'accountHeader': getRoute(), 'home': this.router.url === '/'}">
+  <div class="contact-block">
+    <a href="tel:00000" class="customer-num">
+      Customer Service Hotline <span class="contact-num">1900 1009</span>
+    </a>
+  </div>
+  <div class="footer-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div id="accordian-1" class="accordian">
+            <h3 class="accordian-head" data-toggle="collapse" href="#collapseOne">
+              <a class="movies-link" href="">Movies</a>
+              <span>&nbsp;</span>
+            </h3>
+            <div id="collapseOne" [ngClass]="{'show': innerWidth > 639}" class="accordian-body collapse" data-parent=#accordian-1>
+              <ul class="detail-lists">
+                <li><a href="">Now Showing</a></li>
+                <li><a href="">Coming Soon</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div id="accordian-2" class="accordian">
+            <h3 class="accordian-head" data-toggle="collapse" href="#collapseTwo">
+              <a class="showtimes-link" href="">Showtimes</a>
+              <span>&nbsp;</span>
+            </h3>
+            <div id="collapseTwo" [ngClass]="{'show': innerWidth > 639}" class="accordian-body collapse" data-parent=#accordian-2>
+              <ul class="detail-lists">
+                <li><a href="">Select by Movie</a></li>
+                <li><a href="">Select by Cinema</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div id="accordian-3" class="accordian">
+            <h3 class="accordian-head" data-toggle="collapse" href="#collapseThree">
+              <a class="cinemas-link" href="">Cinemas</a>
+              <span>&nbsp;</span>
+            </h3>
+            <div id="collapseThree" [ngClass]="{'show': innerWidth > 639}" class="accordian-body collapse" data-parent=#accordian-3>
+              <ul class="detail-lists">
+                <li><a href="">Find a Cinema</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div id="accordian-4" class="accordian">
+            <h3 class="accordian-head" data-toggle="collapse" href="#collapseFour">
+              <a class="promotions-link" href="">Promotions</a>
+              <span>&nbsp;</span>
+            </h3>
+            <div id="collapseFour" [ngClass]="{'show': innerWidth > 639}" class="accordian-body collapse" data-parent=#accordian-4>
+              <ul class="detail-lists">
+                <li><a href="">MovieClub</a></li>
+                <li><a href="">F&B</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-logo">
+    <figure>
+      <a href="#">
+        <img src="../../../assets/images/tgv-logo-footer.png">
+      </a>
+    </figure>
+    <div class="container">
+      <ul class="app-block clearfix">
+        <li>Download App</li>
+        <li class="android-app"><a href="https://play.google.com/store/apps/details?id=my.com.tgv.app" target="_blank">&nbsp;</a></li>
+        <li class="iphone-app"><a href="https://itunes.apple.com/my/app/tgv-cinemas/id682997885?mt=8&ign-mpt=uo%3D4" target="_blank">&nbsp;</a></li>
+      </ul>
+      <ul class="social-block clearfix">
+        <li>Connect with Us</li>
+        <li class="fb"><a href="https://www.facebook.com/TGVCinemas" target="_blank">&nbsp;</a></li>
+        <li class="twitter"><a href="https://twitter.com/TGVCinemas" target="_blank">&nbsp;</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+

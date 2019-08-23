@@ -1,0 +1,30 @@
+<div class="movie-info">
+  <figure>
+    <img [src]="MovieItem.image">
+  </figure>
+  <div class="movie-content">
+    <div class="table-row">
+      <div class="table-col">
+        <div class="trailer-block">
+          <a href="" class="play-icon" (click)="playTrailer()" data-toggle="modal" data-target="#trailerModal">&nbsp;</a>
+        </div>
+        <h2>{{MovieItem.name}}</h2>
+        <div class="butn-group">
+          <div class="butn-primary">
+            <a class="butn"  href="movies/{{MovieItem.nameCode}}">
+              Book now
+              <svg>
+                <path class="line2" ></path>
+              </svg>
+            </a>
+
+          </div>
+          <div class="butn-secondary">
+            <a class="butn" href="movies/{{MovieItem.nameCode}}">Movie Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

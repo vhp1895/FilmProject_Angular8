@@ -1,0 +1,88 @@
+<div class="movieDetail">
+    <div class="movieDetail-banner">
+        <figure>
+            <img [src]="movie.imageDetail">
+        </figure>
+        <div class="movie-detail" [ngClass]="{'open': openDetail}">
+            <div class="container">
+                <div class="content">
+                    <div class="trailer-block">
+                        <a (click)="playTrailer()" class="play-icon" data-target="#trailerModal"
+                            data-toggle="modal">&nbsp;</a>
+                    </div>
+                    <h1>{{movie.name}}</h1>
+                    <ul class="movie_info">
+                        <li>
+                            <figure>
+                                <img [src]="movie.age">
+                            </figure>
+                        </li>
+                        <li *ngIf="movie.runningTime">{{movie.runningTime}}</li>
+                        <li *ngIf="movie.language">{{movie.language}}</li>
+                    </ul>
+                </div>
+                <div class="movie-show-details">
+                    <div class="movie-show-content">
+                        <div class="more-info">
+                            <ul>
+                                <li *ngIf="movie.subtitle">
+                                    <h2>Subtitle</h2>
+                                    <p>{{movie.subtitle}}</p>
+                                </li>
+                                <li *ngIf="movie.releaseDate">
+                                    <h2>Release date</h2>
+                                    <p>{{movie.releaseDate | date: 'd MMM yyyy'}}</p>
+                                </li>
+                                <li *ngIf="movie.cast">
+                                    <h2>Cast</h2>
+                                    <p>{{movie.cast}}</p>
+                                </li>
+                                <li *ngIf="movie.director">
+                                    <h2>Director</h2>
+                                    <p>{{movie.director}}</p>
+                                </li>
+                                <li *ngIf="movie.sysnopsis">
+                                    <h2>Synopsis</h2>
+                                    <p>{{movie.sysnopsis}}</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="butn-more-info">
+                        <a (click)="openDetail = !openDetail">
+                            <span class="butn-more-info">More info</span>
+                            <span class="butn-less-info">Less</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-show-date-row (activateDate)="chooseDate($event)"></app-show-date-row>
+    <div class="container">
+        <div class="cinema-location-block">
+            <mat-accordion>
+                <mat-expansion-panel class="panel" *ngFor="let cinema of movie.showtime, let i = index"
+                    [expanded]="i === 0">
+                    <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{cinema.theaterName}}</h2>
+                        </div>
+
+                    </mat-expansion-panel-header>
+                    <div class="panel-body">
+                        <ul>
+                            <ng-container *ngFor="let showtime of cinema.showtimes">
+                                <ng-container *ngIf="compareDate(showtime.hour)">
+                                    <app-button-showtime [showtime]="showtime" [theaterName]="cinema.theaterName" [movieName]="movie.name"></app-button-showtime>
+                                </ng-container>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+// variable color
+$color-major: #ed1c24;
+
+//break points
+$breakpoints:(
+    'xl-4': 1819px,
+    'xl-3': 1679px,
+    'xl-2.5': 1599px,
+    'xl-2': 1439px,
+    'xl-1': 1365px,
+    'xl-0.5': 1279px,
+    'xl': 1199px,
+    'lg-1': 1023px,
+    'lg' : 991px,
+    'md' : 767px,
+    'sm-2': 639px,
+    'sm-1': 599px,
+    'sm' : 576px,
+    'ssm-1': 479px,
+    'ssm': 359px
+)

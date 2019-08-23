@@ -1,0 +1,34 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "Helper/variable";
+@import "Helper/mixin";
+@import "Helper/extend";
+@import "Helper/animation";
+
+@import "Base/reset";
+@import "Base/typography";
+
+
+
+@import "Component/carousel";
+@import "Component/button";
+@import "Component/preloader";
+@import "Component/movie-item";
+@import "Component/modal-phim";
+@import "Component/show-date-row";
+@import "Component/movie-type";
+
+@import "Layout/footer";
+@import "Layout/header";
+
+@import "Layout/sidebar";
+
+@import "Page/booking";
+@import "Page/register";
+@import "Page/signin";
+@import "Page/showtimes";
+@import "Page/movies";
+@import "Page/home";
+
+
+@import "Layout/reponsive";

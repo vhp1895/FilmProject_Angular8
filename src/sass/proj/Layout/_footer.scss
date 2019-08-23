@@ -1,0 +1,208 @@
+.footer {
+    background: #171717;
+    
+    .contact-block {
+        max-width: 597px;
+        margin: 0 auto;
+        padding: 27px 15px 38px;
+        a{
+            @include text(white, 28px, bold);
+            position: relative;
+            padding-top: 40px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 50%;
+                width: 39px;
+                height: 36px;
+                background: url('../../assets/images/sprit.png') no-repeat;
+                background-position: right -251px;
+                transform: translate(-50%,0);
+            }
+        }
+        .contact-num {
+            @include text($color-major, inherit, bold);
+            display: inline-block;
+        }
+    }
+    .footer-menu {
+        border-top: 1px solid rgba(255, 255, 255, .11);
+        padding-top: 54px;
+        .accordian {
+            padding-bottom: 20px;
+            .accordian-head {
+                position: relative;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+                pointer-events: none!important;
+                &[aria-expanded='true'] {
+                    span {
+                        transform: rotate(180deg);
+                    }
+                }
+                a {
+                    pointer-events: auto!important; //
+                    position: relative;
+                    @include text(rgba(255, 255, 255, .8), 20px, bold);
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        left: 0;
+                        background: url('../../assets/images/sprit.png') no-repeat;
+                    }
+                    &.movies-link {
+                        padding-left: 32px;
+                        &::before {
+                            width: 23px;
+                            height: 20px;
+                            background-position: -233px -426px;
+                        }
+                    }
+                    &.promotions-link {
+                        padding-left: 46px;
+                        &::before {
+                            width: 35px;
+                            height: 31px;
+                            background-position: right -157px;
+                        }
+                    }
+                    &.cinemas-link {
+                        padding-left: 39px;
+                        &::before {
+                            width: 28px;
+                            height: 22px;
+                            background-position: -431px -426px;
+                        }
+                    }
+                    &.showtimes-link {
+                        padding-left: 33px;
+                        &::before {
+                            width: 22px;
+                            height: 22px;
+                            background-position: -388px -426px;
+                        }
+                    }
+                }
+                span {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 15px;
+                    height: 100%;
+                    pointer-events: auto!important;
+                    display: none;
+                    transition: all 0.5s;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        right: 0;
+                        width: 15px;
+                        height: 9px;
+                        background: url('../../assets/images/sprit.png') no-repeat;
+                        background-position: right -89px;
+                        transform: translateY(-50%) rotateX(180deg);
+                        cursor: move;
+                    }
+                }
+                
+            }
+            .accordian-body {
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    outline: none;
+                    li a {
+                        @include text(#fff, 15px, normal);
+                        padding: 4px 10px 4px 0;
+                        display: inline-block;
+                        letter-spacing: 0.5px;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+        
+    }
+    .footer-logo {
+        figure {
+            border-bottom: 1px solid rgba(255, 255, 255, .11);
+            padding-bottom: 36px;
+            text-align: center;
+        }
+        color: rgba(255, 255, 255, .8);
+        font-weight: bold;
+        ul {
+            list-style:none;
+            li {
+                display: inline-block;
+            }
+        }
+        .clearfix {
+            &::after {
+                content: ' ';
+                display: table;
+                clear: both;
+            }
+        }
+        .app-block li a, .social-block li a {
+            background: url('../../assets/images/sprit.png') no-repeat;
+            display: block;
+        }
+        .app-block {
+            padding: 26px 0 30px;
+            float: left;
+            li {
+                padding-left: 15px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            .android-app a {
+                padding-top: 2px;
+                width: 19px;
+                height: 21px;
+                background-position: -195px -47px;
+            }
+            .iphone-app a {
+                width: 19px;
+                height: 24px;
+                background-position: -158px -426px;
+            }
+        }
+        .social-block {
+            float: right;
+            padding: 26px 0 30px;
+            li {
+                padding-left: 20px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            .fb a {
+                width: 12px;
+                height: 22px;
+                background-position: 0 -426px;
+            }
+            .twitter a {
+                width: 23px;
+                height: 20px;
+                background-position: -33px -426px;
+            }
+        }
+    }
+}
+
+.footer.accountHeader {
+    display: none;
+}
+
+.footer.home {
+    padding-bottom: 151px;
+}

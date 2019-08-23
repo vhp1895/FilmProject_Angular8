@@ -1,0 +1,35 @@
+.movie-type {
+    .tab {
+        padding-top: 80px;
+        border-bottom: 1px solid rgba(255, 255, 255, .4);
+        margin-bottom: 30px;
+        button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            padding: 0 0 14px 0;
+            transition: color .5s;
+            outline: none;
+            &.active {
+                color: red;
+                font-weight: bold;
+            }
+            &:nth-child(2) {
+                padding-left: 37px;
+            }
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    .list {
+        margin: 45px -30px;
+        padding: 0;
+        li {
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+        }
+    }
+}

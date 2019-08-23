@@ -1,0 +1,31 @@
+<div id="movie-type" class="movie-type">
+  <div class="container">
+    <div class="tab">
+      <button [ngClass]="{'active':nowShowingStatus}" (click)="showNowShowing()">Now Showing</button>
+      <button [ngClass]="{'active':!nowShowingStatus}" (click)="showComingSoon()">Coming Soon</button>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="router.url.includes('movies'); else home">
+    <ul class="list" >
+      <li *ngFor="let movie of filmList">
+        <app-movie-item [MovieItem]="movie"></app-movie-item>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #home>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let movie of filmList">
+        <div class="fade-in">
+          <app-movie-item [MovieItem]="movie"></app-movie-item>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+    <div class="container">
+      <div class="btn-view-group">
+        <a href="/movies" class="btn-view">View all Movies</a>
+      </div>
+    </div>
+  </ng-template>
+</div>

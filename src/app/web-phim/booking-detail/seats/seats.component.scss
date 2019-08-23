@@ -1,0 +1,117 @@
+// .seatinfo {
+//     padding: 15px 0;
+//     ul {
+//         text-align: center;
+//         li {
+//             &:first-child {
+//                 margin-left: 0;
+//             }
+//             font-size: 15px;
+//             line-height: 30px;
+//             padding-left: 38px;
+//             display: inline-block;
+//             vertical-align: top;
+//             position: relative;
+//             margin-left: 45px;
+//             &::before {
+//                 width: 28px;
+//                 height: 100%;
+//                 background-repeat: no-repeat;
+//                 background-position: left center;
+//                 content: "";
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//             }
+//         }
+//         li.selectedseat {
+//             color: #69ac38;
+//             &::before {
+//                 background-image: url('../../../../assets/images/bookingflow/seat/ic-seat-selected.png')
+//             }
+//         }
+//         li.soldseat {
+//             color: #b80f1e;
+//             &::before {
+//                 background-image: url('../../../../assets/images/bookingflow/seat/ic-seat-sold.png')
+//             }
+//         }
+//         li.classicseat {
+//             color: #f8d118;
+//             &::before {
+//                 background-image: url('../../../../assets/images/bookingflow/seat/ic-seat-classic.png')
+//             }
+//         }
+//         li.vipseat {
+//             color: orange;
+//             &::before {
+//                 background-image: url('../../../../assets/images/bookingflow/seat/ic-seat-vip.png')
+//             }
+//         }
+//     }
+// }
+// .seatinglayout {
+//     padding: 10px 0;
+//     .slhead {
+//         background: url('../../../../assets/images/bg-screen-transwhite.png') no-repeat top center;
+//         padding: 15px 0 0;
+//         h6 {
+//             font-size: 12px;
+//             line-height: 18px;
+//             color: #6a6a6a;
+//             background: url('../../../../assets/images/ic-linearrow-top.png') no-repeat top center;
+//             padding: 35px 0 10px;
+//             text-align: center;
+//             text-transform: uppercase;
+//         }
+//     }
+//     .slbody {
+//         padding: 55px 0 20px;
+//         overflow-x: scroll;
+//         white-space: nowrap;
+//         text-align: center;
+//         .slbody-content {
+//             display: inline-block;
+//             position: relative;
+//             margin-left: 50px;
+//             margin-right: 70px;
+//             ul {
+//                 position: absolute;
+//                 top: 0;
+//                 display: inline;
+//                 li {
+//                     margin-bottom: 35px;
+//                     font-size: 12px;
+//                     line-height: 23px;
+//                     vertical-align: middle;
+//                 }
+//             }
+//             .left {
+//                 left: -50px;
+//             }
+//             .right {
+//                 right: -70px;
+//             }
+//         }
+//     }
+// }
+// #scrollbar::-webkit-scrollbar-track
+// {
+// 	border-radius: 10px;
+//     background-color: rgba(255,255,255,0.4);
+//     height: 3px;
+// }
+
+// #scrollbar::-webkit-scrollbar
+// {
+//     height: 3px;
+//     border-radius: 10px;
+// 	background-color: rgba(255,255,255,0.4);
+// }
+
+// #scrollbar::-webkit-scrollbar-thumb
+// {
+//     border-radius: 10px;
+//     height: 3px;
+// 	background-color: #ed1c24;
+// }

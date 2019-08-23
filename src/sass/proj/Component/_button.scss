@@ -1,0 +1,124 @@
+.btn-view-group {
+    padding: 31px 0 80px;
+    .btn-view {
+        font-size: 22px;
+        font-weight: bold;
+        float: right;
+        padding-right: 50px;
+        position: relative;
+        transition: .5s;
+        color: white;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            content: '';
+            width: 36px;
+            height: 36px;
+            background: url('../../assets/images/sprit.png') no-repeat;
+            background-position: -75px -176px;
+            transform: translate(0, -50%);
+            transition: all .5s;
+        }
+        &:hover {
+            color: red!important;
+            &::after {
+                background-position: -75px -244px;
+            }
+        }
+    }
+}
+
+.submitBtn {
+    text-transform: uppercase;
+    padding: 0 35px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: $color-major;
+    border-radius: 5px;
+    border: none;
+}
+
+.promo-btn {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    min-width: 166px;
+    height: 51px;
+    background: transparent;
+    padding: 0 15px;
+    border: 1px solid white;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s;
+    &::before {
+        content: '';
+        background: $color-major;
+        width: 50px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -50%;
+        transform: skewX(-45deg);
+        transition: all 1s;
+    }
+    &:hover {
+        background: black;
+        &::before {
+            left: 120%;
+        }
+    }
+}
+
+.btnShowtime {
+    padding: 0 20px;
+    display: inline-block;
+    margin: 5px 0;
+    a {
+        text-align: center;
+        padding-bottom: 24px;
+        position: relative;
+        display: block;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+            .time {
+                background: #fff;
+                color: #000;
+                &::before {
+                    background-color: #fff;
+                }
+            }
+        }
+        .time {
+            width: 150px;
+            font-size: 18px;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #fff;
+            background: #161616;
+            line-height: 62px;
+            height: 62px;
+            letter-spacing: 1px;
+            position: relative;
+            transition: all 0.3s;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 3px;
+                width: 72px;
+                border-top-left-radius: 5px;
+                background:  #69ac38;
+                transition: all 0.3s;
+            }
+        }
+    }
+}

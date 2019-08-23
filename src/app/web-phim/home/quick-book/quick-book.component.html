@@ -1,0 +1,71 @@
+<div class="quickbook" [ngClass]="{'openMobile': isOpen}">
+    <div class="quickbook-col1" (click)="toggle(true)">
+        <h4 class="get-ticket">Ready to get your tickets?</h4>
+        <h3>quick book</h3>
+    </div>
+    <div class="quickbook-col2" >
+        <div class="quickbook-lists" [formGroup]="quickBookForm" (ngSubmit)="bookNow()">
+            <h3 class="mobile">
+                Quick Book
+                <a class="btnClose" (click)="toggle(false)">Close</a>
+            </h3>
+            <mat-form-field class="selectBox" floatLabel="never">
+                <mat-label>
+                    <mat-icon>theaters</mat-icon> Choose a Cinema
+                </mat-label>
+                <mat-select (selectionChange)="chooseCine($event)" formControlName="cinema">
+                    <mat-option *ngFor="let cine of Cinemas" [value]="cine.theaterCode">
+                        {{cine.theaterName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="selectBox" floatLabel="never">
+                <mat-label>
+                    <mat-icon>movie_filter</mat-icon> Choose a Movie
+                </mat-label>
+                <mat-select (selectionChange)="chooseMovie($event)" formControlName="movie"
+                    [disabled]="!f.cinema.value">
+                    <ng-container *ngIf="queryCine">
+                        <mat-option *ngFor="let movie of queryCine.movieList" [value]="movie.movieName">
+                            {{movie.movieName}}
+                        </mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="selectBox" floatLabel="never">
+                <mat-label>
+                    <mat-icon>date_range</mat-icon> Choose a Date
+                </mat-label>
+                <mat-select (selectionChange)="chooseDate($event)" formControlName="date" [disabled]="!f.movie.value">
+                    <ng-container *ngIf="queryMovie">
+                        <mat-option *ngFor="let date of queryMovie.showtimes" [value]="date.date">
+                            {{date.date | date: "d-MM-yyyy (EEE)"}}
+                        </mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="selectBox" floatLabel="never">
+                <mat-label>
+                    <mat-icon>watch_later</mat-icon> Choose a Showtime
+                </mat-label>
+                <mat-select (selectionChange)="chooseShowtime($event)" formControlName="showtime"
+                    [disabled]="!f.date.value">
+                    <ng-container *ngIf="queryShowtime">
+                        <mat-option *ngFor="let showtime of queryShowtime" [value]="showtime.showtimeCode">
+                            {{showtime.hour | date: "h: MM aaa"}}
+                        </mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="quickbook-col3">
+
+        <div class="booknow-btn">
+            <button [disabled]="quickBookForm.invalid" class="btn-bknow" (click)="bookNow()">
+                Book Now
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="booking-section">
+    <div class="ticket-booking">
+
+        <div class="container">
+            <div class="booking-infobar-seat" [ngClass]="{'open': (listSelectingSeat.length > 0) }">
+                <div class="booking-infobar">
+                    <ul>
+                        <li class="step1" [ngClass]="{'active': router.url.includes('seats')}">
+                            <p>
+                                <em>1</em>
+                                <span>Select Seats</span>
+                            </p>
+                        </li>
+                        <li class="step2" [ngClass]="{'active': router.url.includes('fnb')}">
+                            <p>
+                                <em>2</em>
+                                <span>Food &amp; Beverage</span>
+                            </p>
+                        </li>
+                        <li class="step3" [ngClass]="{'active': router.url.includes('payment')}">
+                            <p>
+                                <em>3</em>
+                                <span>Payment</span>
+                            </p>
+                        </li>
+                        <li class="step4">
+                            <p>
+                                <em>4</em>
+                                <span>Confirmation</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="selectedSeat" *ngIf="listSelectingSeat.length > 0 && router.url.includes('seats')">
+                    <h6>Your Seats</h6>
+                    <ul>
+                        <li *ngFor="let seat of listSelectingSeat">
+                            {{seat.seatName}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="booking-detail" *ngIf="hallInfo">
+        <h1>{{hallInfo.movieName}}</h1> 
+        <ul class="info-list">
+            <li class="li_cinema">{{hallInfo.theaterName}}</li>
+            <li class="li_roomnumber">{{hallInfo.hallName}}</li>
+            <li class="li_date">{{hallInfo.showtime | date: "dd MMM yyyy"}}</li>
+            <li class="li_time">{{hallInfo.showtime | date: "h:mm aaa"}}</li>
+        </ul>
+    </div>
+    <div class="fixedbottom-strap">
+        <div class="container">
+            <div class="fbstrap-inner">
+                <p *ngIf="totalPrice > 0">
+                    <span>Total <strong>{{totalPrice || number}} VND</strong></span>
+                </p>
+                <button *ngIf="!router.url.includes('payment')" [disabled]="listSelectingSeat.length === 0" (click)="bookingFlow()"
+                    class="butn">Continue</button>
+                <button *ngIf="router.url.includes('payment')" disabled=true (click)="bookingFlow()"
+                    class="butn">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>

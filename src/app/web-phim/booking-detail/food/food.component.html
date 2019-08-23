@@ -1,0 +1,20 @@
+<div class="fab">
+    <h2>Food & Beverages</h2>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let tab of foodTabList">
+            <a data-toggle="tab" href="#tab.type">{{tab.type}}</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div *ngFor="let tab of foodTabList" class="tab-pane active" id="tab.type">
+            <ul class="fnb-list">
+                <li *ngFor="let fooditem of tab.foodList">
+                    <app-food-item [FoodItem]="fooditem"></app-food-item>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

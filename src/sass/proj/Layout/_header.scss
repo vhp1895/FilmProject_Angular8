@@ -1,0 +1,388 @@
+#header {
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent);
+    padding-top: 48px;
+    z-index: 100;
+    transition: all .5s;
+    .profile {
+        margin-right: 40px;
+        position: relative;
+        &:hover {
+            .profile-drop-down {
+                opacity: 1;
+                transform: rotateX(0deg);
+                
+            }
+        }
+        .profile-name {
+            display: table;
+            p {
+                font-size: 15px;
+                line-height: 15px;
+                text-align: right;
+                padding-right: 10px;
+                text-transform: capitalize;
+                display: table-cell;
+                vertical-align: middle;
+                span {
+                    display: block;
+                    font-size: 13px;
+                    line-height: 15px;
+                }
+            }
+            figure {
+                display: table-cell;
+                img {
+                    width: 41px;
+                    height: auto;
+                }
+            }
+        }
+        .profile-drop-down {
+            position: absolute;
+            width: 293px;
+            min-height: 100px;
+            background: $color-major;
+            top: 70px;
+            right: -10px;
+            border-radius: 5px;
+            padding: 28px 0 25px 33px;
+            opacity: 0;
+            transform: rotateX(90deg);
+            transform-origin: 0px 0px;
+            transition: all 0.5s ease ;
+            perspective: 1200px;
+            li{
+                a {
+                    cursor: pointer;
+                    display: block;
+                    font-size: 17px;
+                    line-height: 25px;
+                    padding: 5px 0 5px 35px;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            li.my-account a::before {
+                width: 16px;
+                height: 18px;
+                background: url('../../assets/images/icon-profile.png') no-repeat;
+            }
+            li.log-out a::before {
+                width: 17px;
+                height: 20px;
+                background: url('../../assets/images/icon-logout.png') no-repeat;
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                width: 31px;
+                height: 30px;
+                border-radius: 6px;
+                top: -6px;
+                background: $color-major;
+                right: 15px;
+                transform: rotate(55deg) skewX(22deg);
+            }
+            &::after {
+                position: absolute;
+                top: -30px;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 30px;
+                background: transparent;
+                z-index: -1;
+            }
+        }
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        overflow: hidden;
+        transition: all 0.4s;
+        background-color: transparent;
+        pointer-events: none;
+        display: none;
+        .sidebar-menu {
+            position: absolute;
+            top: 0;
+            right: -70%;
+            width: 70%;
+            height: 100%;
+            background: #000;
+            transition: all 0.4s;
+            overflow: hidden;
+            .sidebar-close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 25px;
+                height: 25px;
+                background: url('../../assets/images/account/icon-close-header.png') no-repeat;
+                z-index: 100;
+            }
+            .sidebar-login {
+                display: block;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                width: 100%;
+                padding: 60px 15px 15px;
+                .login-title {
+                    @include text(#fff, 20px, normal);
+                    margin-bottom: 34px;
+                    a {
+                        @include text(#fff, inherit, bold);
+                        display: inline-block;
+                        margin-top: 7px;
+                        padding-right: 150px;
+                        background: url('../../assets/images/movie-club.png') no-repeat;
+                        background-position: right center;
+                    }
+                }
+                ul {
+                    li {
+                        display: inline-block;
+                        width: auto;
+                        padding-left: 50px;
+                        text-align: center;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        span {
+                            display: block;
+                            color: rgba($color: #fff, $alpha: 0.8);
+                        }
+                        a {
+                            padding: 0;
+                            display: block;
+                            @include text(#fff, 18px, bold);
+                            text-transform: uppercase;
+                            border-radius: 5px;
+                            margin: 0;
+                            margin-top: 8px;
+                            line-height: 45px;
+                        }
+                    }
+                    li.sign-in a {
+                        color: #fff;
+                        background: $color-major;
+                        width: 140px;
+                    }
+                    li.log-in {
+                        a {
+                            color: $color-major;
+                            background: #fff;
+                            width: 180px;
+                        }
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            ul {
+                padding: 20px;
+                li a {
+                    padding: 0;
+                    padding-left: 40px;
+                    @include text(#fff, 14px, bold);
+                    line-height: 35px;
+                    position: relative;
+                    letter-spacing: 0.5px;
+                    display: block;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 0;
+                        background: url('../../assets/images/sprit.png') no-repeat;
+                        transform: translateY(-50%);
+                        background-size: 358px auto;
+                    }
+                }
+                li.movies-link a::before {
+                    width: 19px;
+                    height: 16px;
+                    background-position: -166px -305px;
+                }
+                li.showtimes-link a::before {
+                    width: 17px;
+                    height: 17px;
+                    background-position: -277px -305px;
+                }
+                li.promotions-link a::before {
+                    width: 24px;
+                    height: 22px;
+                    background-position: -112px -174px;
+                }
+            } 
+        }
+    }
+    .sidebar.active {
+        background-color: rgba(0, 0, 0, .8);
+        pointer-events: inherit;
+        .sidebar-menu {
+            right: 0;
+        }
+    }
+    .navbar {
+        padding: 0;
+        .navbar-brand{
+            img {
+                outline: none;
+            }
+        }
+        a {
+            @include text(white, 19px, bold);        
+        }
+        .menu {
+            justify-content: space-around;
+            .navbar-nav {
+                margin-left: 90px;
+                li {
+                    a {
+                        padding: 0 20px;
+                        transition: all 0.5s;
+                        letter-spacing: 0.5px;
+                        position: relative;
+                        &:hover {
+                            color: $color-major;
+                            &::after {
+                                transform: translate(-50%,0) scale(1);
+                            }
+                        }
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            width: 28px;
+                            height: 2px;
+                            left: 50%;
+                            bottom: 0;
+                            background: #fff;
+                            transform: translateX(-50%) scale(0);
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+                li.active a {
+                    color: $color-major;
+                    &::after {
+                        transform: translate(-50%,0) scale(1);
+                    }
+                }
+            }
+            .right-nav {
+                margin-right: 50px;
+                border: 1px solid rgba(225, 225, 225, 0.22);
+                display: flex;
+                align-items: center;
+                figure {
+                    padding: 0 27px;
+                    line-height: 39px;
+                    display: inline-block;
+                }
+                ul {
+                    display: flex;
+                    position: relative;
+                    padding: 0 18px;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: 2px;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        transform: rotate(10deg);
+                        background: rgba(225, 225, 225, 0.22);
+                    }
+                    li:nth-child(2) {
+                        position: relative;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 1px;
+                            height: 14px;
+                            left: 0;
+                            top: 50%;
+                            background: #505050;
+                            transform: translate(0, -50%);
+                        }                        
+                    }
+                    a {
+                        margin: 0 8px;
+                        letter-spacing: 1px;
+                        display: block;
+                        @include text(white, 15px, normal);
+                        padding: 0 20px;
+                    }
+                }
+            }
+            
+        }
+    }
+    .back-btn {
+        display: none;
+        background: black;
+        .back-icon {
+            position: absolute;
+            width: 25px;
+            height: 26px;
+            right: 15px;
+            top: 50%;
+            background: url('../../assets/images/account/icon-close-header.png') no-repeat;
+            display: block;
+            transform: translate(0,-50%);
+        }
+    }
+    .burger-menu {
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        .burger-menu-icon {
+            float: left;
+            width: 33px;
+            height: 23px;
+            background: url('../../assets/images/sprit.png') no-repeat;
+            background-position: -275px top;
+        }
+    }
+}
+#header.sticky {
+    padding: 15px 0;
+    background : rgba(0, 0, 0, .6);
+}
+
+#header.accountHeader {
+    padding: 19px 0 16px;
+    background: #000;
+    position: fixed;
+    .menu {
+        display: none!important;
+    }
+    .back-btn {
+        display: block;
+    }
+    .burger-menu {
+        display: none;
+    }
+}
+
+#header.innerPageHeader {
+    position: fixed;
+    padding: 15px 0 11px!important;
+    background: black!important;
+    top: 0;
+}

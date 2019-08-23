@@ -1,0 +1,84 @@
+<div class="register">
+    <div class="container">
+        <form class="register-block" [formGroup]="registerForm" (ngSubmit)="Register()">
+            <h2><span class="sign-key">&nbsp;</span>Sign Up</h2>
+            <div class="form-left">
+                <mat-form-field class="form-group">
+                    <mat-label>Email ID</mat-label>
+                    <input matInput type="email" formControlName="email" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="f.email.hasError('email')"> Please enter a valid 'Email Address'.</mat-error>
+                    <mat-error *ngIf="f.email.hasError('required')">Email is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-right">
+                <mat-form-field class="form-group">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput type="tel" formControlName="phone" required>
+                    <mat-icon matSuffix>smartphone</mat-icon>
+                    <mat-error *ngIf="f.phone.hasError('required') || f.phone.hasError('minlength')">Please enter a
+                        valid 'Mobile Number'. (Please use this format - '01234567890').</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-left">
+                <mat-form-field class="form-group">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="f.password.hasError('required')"> Please enter your 'Password'.</mat-error>
+                    <mat-error *ngIf="f.password.hasError('pattern')"> Please refer the below password policy.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-right">
+                <mat-form-field class="form-group">
+                    <mat-label>Retype password</mat-label>
+                    <input matInput [type]="hideConfirm ? 'password' : 'text'" formControlName="passwordConfirm" required>
+                    <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">
+                        {{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="f.passwordConfirm.hasError('mustMatch')">The password does not match, please try
+                        again.</mat-error>
+                    <mat-error *ngIf="f.passwordConfirm.hasError('required')">Please confirm your 'Password'.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <h3>Password Must:</h3>
+            <ul class="password-info">
+                <li>Contain minimum 8 characters</li>
+                <li>
+                    Include at least one number and
+                    <span class="info">
+                        symbol.
+                        <span class="info-content">
+                            Punctuation marks are allowed, as well as special symbols such as: ^ $ # or @
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    Include both lower and upper case
+                    <span class="info">
+                        letters.
+                        <span class="info-content">
+                            Permissible letters are A to Z and a to z
+                        </span>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="form-check">
+                <mat-checkbox [labelPosition]="after" formControlName="acceptTerms">
+                    I certify that I am 18 years of age or older and I have read and agreed to the TGV Cinemas MovieClub
+                    Terms & Conditions.
+                </mat-checkbox>
+                <mat-error *ngIf="submitted && f.acceptTerms.errors">Please read and accept terms and conditions to
+                    proceed</mat-error>
+            </div>
+            <div class="form-link">
+                <button class="submitBtn" type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>

@@ -1,0 +1,4 @@
+<span *ngIf="seatInput.daDat" disabled class="classicSeat soldSeat">&nbsp;</span>
+
+<span *ngIf="!seatInput.daDat" [ngClass]="{'vipSeat':seatInput.loaiGhe==='Vip','selectingSeat': selectingStatus}" class="classicSeat" (click)="select()">&nbsp;</span>
+
