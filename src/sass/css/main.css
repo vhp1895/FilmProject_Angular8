@@ -106,7 +106,7 @@ figure {
     position: relative;
     -webkit-transition: .5s;
     transition: .5s;
-    color: white;
+    color: #fff;
     cursor: pointer; }
     .btn-view-group .btn-view::after {
       position: absolute;
@@ -140,12 +140,12 @@ figure {
   margin-top: 30px;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #fff;
   min-width: 166px;
   height: 51px;
   background: transparent;
   padding: 0 15px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -220,55 +220,124 @@ figure {
   width: 100%;
   background: #1a1a19;
   z-index: 9999;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
-  #loader .loaderContent {
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out; }
+  #loader .lds-heart {
     position: absolute;
-    top: 45%;
-    left: 45%;
+    top: 50%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#ed1c24), to(#a2b2c4));
-    background: linear-gradient(#000, #ed1c24, #a2b2c4);
-    -webkit-animation: animate 0.5s linear infinite;
-            animation: animate 0.5s linear infinite; }
-  #loader .loaderContent span {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 32px 32px;
+            transform-origin: 32px 32px; }
+  #loader .lds-heart div {
+    top: 23px;
+    left: 19px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#ed1c24), to(#a2b2c4));
-    background: linear-gradient(#000, #ed1c24, #a2b2c4);
-    -webkit-animation: animate 0.5s linear infinite;
-            animation: animate 0.5s linear infinite; }
-  #loader .loaderContent span:nth-child(1) {
-    -webkit-filter: blur(5px);
-            filter: blur(5px); }
-  #loader .loaderContent span:nth-child(2) {
-    -webkit-filter: blur(10px);
-            filter: blur(10px); }
-  #loader .loaderContent span:nth-child(3) {
-    -webkit-filter: blur(25px);
-            filter: blur(25px); }
-  #loader .loaderContent span:nth-child(4) {
-    -webkit-filter: blur(50px);
-            filter: blur(50px); }
-  #loader .loaderContent::after {
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    -webkit-animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1); }
+  #loader .lds-heart div:after,
+  #loader .lds-heart div:before {
+    content: " ";
     position: absolute;
-    content: '';
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: #1a1a19;
-    border-radius: 50%; }
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: #fff; }
+  #loader .lds-heart div:before {
+    left: -17px;
+    border-radius: 50% 0 0 50%; }
+  #loader .lds-heart div:after {
+    top: -17px;
+    border-radius: 50% 50% 0 0; }
 
 #loader.ninja {
   display: none; }
 
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 32px 32px;
+          transform-origin: 32px 32px; }
+
+.lds-heart div {
+  top: 23px;
+  left: 19px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  -webkit-animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: #fff; }
+
+.lds-heart div:before {
+  left: -17px;
+  border-radius: 50% 0 0 50%; }
+
+.lds-heart div:after {
+  top: -17px;
+  border-radius: 50% 50% 0 0; }
+
+@-webkit-keyframes lds-heart {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); } }
+
+@keyframes lds-heart {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); } }
 .movie-info {
   margin: 30px 35px;
   -webkit-transition: all .5s;
@@ -328,7 +397,7 @@ figure {
           font-size: 16px;
           line-height: 20px;
           padding: 20px 0 25px;
-          color: white;
+          color: #fff;
           font-weight: bold; }
         .movie-info .movie-content .table-row .table-col .play-icon {
           width: 50px;
@@ -368,7 +437,7 @@ figure {
               line-height: 51px;
               background: transparent; }
               .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn:hover {
-                color: white; }
+                color: #fff; }
                 .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn:hover svg path.line2 {
                   fill: red; }
               .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg {
@@ -382,14 +451,13 @@ figure {
                 -webkit-transition: all .5s;
                 transition: all .5s; }
                 .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path.line2 {
-                  fill: white;
+                  fill: #fff;
                   -webkit-transition: all .5s;
-                  transition: all .5s;
-                  d: path("M 0 0 l 250 0 l -12 54 l -238 0 l 0 -54"); }
+                  transition: all .5s; }
           .movie-info .movie-content .table-row .table-col .butn-group .butn-secondary .butn {
             font-size: 21px;
             font-weight: bold;
-            color: white;
+            color: #fff;
             background: transparent;
             padding: 0;
             min-height: 56px;
@@ -497,7 +565,7 @@ figure {
   .movie-type .tab button {
     background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 22px;
     padding: 0 0 14px 0;
     -webkit-transition: color .5s;
@@ -525,7 +593,7 @@ figure {
     margin: 0 auto;
     padding: 27px 15px 38px; }
     .footer .contact-block a {
-      color: white;
+      color: #fff;
       font-size: 28px;
       font-weight: bold;
       position: relative;
@@ -910,7 +978,7 @@ figure {
     #header .navbar .navbar-brand img {
       outline: none; }
     #header .navbar a {
-      color: white;
+      color: #fff;
       font-size: 19px;
       font-weight: bold; }
     #header .navbar .menu {
@@ -991,7 +1059,7 @@ figure {
             margin: 0 8px;
             letter-spacing: 1px;
             display: block;
-            color: white;
+            color: #fff;
             font-size: 15px;
             font-weight: normal;
             padding: 0 20px; }
@@ -1650,7 +1718,7 @@ figure {
 .register {
   padding-top: 105px; }
   .register h2, .register h3 {
-    color: white;
+    color: #fff;
     font-weight: bold; }
   .register h3 {
     padding-top: 42px;
@@ -1687,16 +1755,14 @@ figure {
     .register .register-block .form-group {
       margin: 45px 0 0;
       width: 100%; }
-      .register .register-block .form-group * {
-        color: white; }
-      .register .register-block .form-group mat-error {
-        color: #f44336 !important; }
       .register .register-block .form-group input {
         padding-bottom: 15px; }
-      .register .register-block .form-group mat-label {
-        font-size: 100; }
+      .register .register-block .form-group .mat-form-field-label {
+        color: #fff; }
+    .register .register-block .form-group.mat-form-field-invalid .mat-form-field-label {
+      color: #f44336; }
     .register .register-block .password-info {
-      color: white;
+      color: #fff;
       padding: 17px 0 11px; }
       .register .register-block .password-info li {
         padding-left: 25px;
@@ -1727,7 +1793,7 @@ figure {
             bottom: 30px;
             left: -82px;
             width: 216px;
-            color: white;
+            color: #fff;
             background: #585858;
             font-size: 11px;
             padding: 10px 18px;
@@ -1743,8 +1809,15 @@ figure {
     .register .register-block .form-check {
       padding-left: 0;
       padding-top: 40px;
-      color: white;
+      color: #fff;
       font-weight: lighter; }
+      .register .register-block .form-check .mat-checkbox-frame {
+        border-color: #898989; }
+      .register .register-block .form-check .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: transparent; }
+      .register .register-block .form-check .mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+      .register .register-block .form-check .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+        background-color: #ed1c24; }
     .register .register-block .form-link {
       display: inline-block;
       width: 50%;
@@ -1752,18 +1825,12 @@ figure {
       .register .register-block .form-link .submitBtn {
         min-width: 226px;
         line-height: 51px;
-        color: white;
+        color: #fff;
         -webkit-transition: all 0.5s;
         transition: all 0.5s; }
         .register .register-block .form-link .submitBtn:hover {
           color: #ed1c24;
           background-color: #fff; }
-
-::ng-deep .mat-checkbox .mat-checkbox-frame {
-  border-color: #898989; }
-
-::ng-deep .mat-checkbox-checked .mat-checkbox-background {
-  background-color: transparent !important; }
 
 .signin {
   padding-top: 105px; }
@@ -1819,15 +1886,17 @@ figure {
           margin-top: 26px;
           width: 100%; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::-webkit-input-placeholder {
-            color: white; }
+            color: #fff; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input:-ms-input-placeholder {
-            color: white; }
+            color: #fff; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::-ms-input-placeholder {
-            color: white; }
+            color: #fff; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::placeholder {
-            color: white; }
-        .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-check {
-          padding: 37px 0 0; }
+            color: #fff; }
+          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group .mat-form-field-label {
+            color: #fff; }
+        .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group.mat-form-field-invalid .mat-form-field-label {
+          color: #f44336; }
         .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-link {
           padding-top: 25px; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-link .submitBtn {
@@ -1850,11 +1919,11 @@ figure {
 
 ::ng-deep .mat-form-field-label {
   /*change color of label*/
-  color: white !important; }
+  color: #fff !important; }
 
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
-  color: white !important; }
+  color: #fff !important; }
 
 ::ng-deep .mat-form-field-invalid .mat-form-field-label {
   /*change color of label*/
@@ -2155,7 +2224,7 @@ figure {
     left: 0;
     bottom: 201px;
     width: 100%;
-    color: white;
+    color: #fff;
     padding: 0 15px; }
     .movie-banner .movie-content h2 {
       font-size: 95px;
@@ -2186,7 +2255,7 @@ figure {
           height: 1px;
           top: 50%;
           left: 0;
-          background: white;
+          background: #fff;
           -webkit-transform: translate(0, -50%);
                   transform: translate(0, -50%); }
 
@@ -2311,7 +2380,7 @@ figure {
       left: 50%;
       top: 50%;
       bottom: auto;
-      color: white;
+      color: #fff;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       text-align: center; }
@@ -2581,28 +2650,6 @@ figure {
 @media (max-width: 479px) {
   .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn {
     min-width: 135px !important; } }
-@media (max-width: 1679px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 0 0 l 217 0 l -12 54 l -205 0 l 0 -54") !important; } }
-@media (max-width: 1600px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 0 0 l 217 0 l -12 48 l -205 0 l 0 -48") !important; } }
-@media (max-width: 1365px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 0 0 l 217 0 l -12 48 l -205 0 l 0 -48") !important; } }
-@media (max-width: 1280px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 0 0 l 213 0 l -12 48 l -201 0 l 0 -48") !important; } }
-@media (max-width: 767px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    fill: #ed1c24 !important;
-    d: path("M 0 0 l 190 0 l -12 48 l -178 0 l 0 -48") !important; } }
-@media (max-width: 599px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 0 0 l 190 0 l -12 42 l -178 0 l 0 -42") !important; } }
-@media (max-width: 479px) {
-  .movie-info .movie-content .table-row .table-col .butn-group .butn-primary .butn svg path {
-    d: path("M 3 0 l 135 0 l -12 42 l -123 0 l 0 -42") !important; } }
 
 @media (max-width: 1599px) {
   .promotion-content {

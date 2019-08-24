@@ -8,7 +8,7 @@ import * as $ from "jquery";
 })
 export class FooterComponent implements OnInit {
   public innerWidth: any;
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;

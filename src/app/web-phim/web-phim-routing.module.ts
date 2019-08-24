@@ -15,15 +15,15 @@ import { HomeModule } from './home/home.module';
 const routes: Routes = [
   {
     path: "", component: WebPhimComponent, children: [
-      { path: "",loadChildren: () => HomeModule },
+      { path: "",loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
 
       {
-        path: "booking-detail", loadChildren: () => BookingDetailModule,
+        path: "booking-detail", loadChildren: () => import('./booking-detail/booking-detail.module').then(m => m.BookingDetailModule),
         canActivate: [IsLoginGuard]
       },
-      { path: "account", loadChildren: () => FormModule },
-      { path: "movies", loadChildren: () => MoviesModule },
-      { path: "showtimes", loadChildren: () => ShowtimesModule },
+      { path: "account", loadChildren: () => import('./form/form.module').then(m => m.FormModule) },
+      { path: "movies", loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
+      { path: "showtimes", loadChildren: () => import('./showtimes/showtimes.module').then(m => m.ShowtimesModule) },
     ]
   }
 ];

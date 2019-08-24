@@ -4,6 +4,8 @@ import { BookingDetailComponent } from "./booking-detail.component";
 import { SeatsComponent } from './seats/seats.component';
 import { FoodComponent } from './food/food.component';
 import { PaymentComponent } from './payment/payment.component';
+import { BookingDetailModule } from './booking-detail.module';
+
 
 
 const routes: Routes = [

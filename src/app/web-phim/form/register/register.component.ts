@@ -44,22 +44,22 @@ export class RegisterComponent implements OnInit {
       maLoaiNguoiDung: "",
       hoTen: ""
     };
-    if (this.registerForm.valid) {
-      const uri = `QuanLyNguoiDung/DangKy`;
-      this.dataService.post(uri, objUser).subscribe((data: any) => {
-        this.loginStatus = true;
-        Swal.fire({
-          toast: true,
-          type: 'success',
-          html:
-            "Try " +
-            "<a href='/account/signin'><strong>log in?</strong></a>",
-          position: 'bottom-right',
-          timer: 10000,
-          showConfirmButton: false
-        })
-      });
-      if (!this.loginStatus) {
+
+    const uri = `QuanLyNguoiDung/DangKy`;
+    this.dataService.post(uri, objUser).subscribe((data: any) => {
+      Swal.fire({
+        toast: true,
+        type: 'success',
+        html:
+          "Try " +
+          "<a href='/account/signin'><strong>log in?</strong></a>",
+        position: 'bottom-right',
+        timer: 10000,
+        showConfirmButton: false
+      })
+    }, err => {
+      console.log(err);
+      if (err === "Email đã tồn tại!") {
         Swal.fire({
           toast: true,
           type: 'info',
@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
           showConfirmButton: false
         })
       }
-    }
-
+    });
   }
+
 }

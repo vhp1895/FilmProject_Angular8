@@ -244,7 +244,7 @@
             }
         }
         a {
-            @include text(white, 19px, bold);        
+            @include text(#fff, 19px, bold);        
         }
         .menu {
             justify-content: space-around;
@@ -323,7 +323,7 @@
                         margin: 0 8px;
                         letter-spacing: 1px;
                         display: block;
-                        @include text(white, 15px, normal);
+                        @include text(#fff, 15px, normal);
                         padding: 0 20px;
                     }
                 }

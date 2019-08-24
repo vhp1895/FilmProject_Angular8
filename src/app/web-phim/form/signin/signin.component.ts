@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
   hide: boolean = true;
   signInForm: FormGroup;
-  signInStatus: boolean = false;
   isSubmitted: boolean = false;
   constructor(
     private fb: FormBuilder,
@@ -24,8 +23,12 @@ export class SigninComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
+    this.test();
   }
-
+  test() {
+    console.log('test local')
+    localStorage.setItem('test', 'asdasd')
+  }
   get f() { return this.signInForm.controls }
 
   signIn() {
@@ -36,13 +39,11 @@ export class SigninComponent implements OnInit {
     };
     const uri = `QuanLyNguoiDung/DangNhap`;
     this.dataService.post(uri, objUser).subscribe((data: any) => {
-      this.signInStatus = true;
       localStorage.setItem("user", JSON.stringify(data));
       localStorage.setItem('accessToken', data.accessToken);
       window.location.href = '/';
-    });
-    setTimeout(() => {
-      if (!this.signInStatus) {
+    }, err => {
+      if (err === "Tài khoản hoặc mật khẩu không đúng!") {
         Swal.fire({
           toast: true,
           type: 'info',
@@ -52,11 +53,11 @@ export class SigninComponent implements OnInit {
           showConfirmButton: false
         })
       }
-    }, 200);
+    });
   }
 
 }
 
-  
 
-  
+
+

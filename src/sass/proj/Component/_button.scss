@@ -7,7 +7,7 @@
         padding-right: 50px;
         position: relative;
         transition: .5s;
-        color: white;
+        color: #fff;
         cursor: pointer;
         &::after {
             position: absolute;
@@ -45,12 +45,12 @@
     margin-top: 30px;
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: #fff;
     min-width: 166px;
     height: 51px;
     background: transparent;
     padding: 0 15px;
-    border: 1px solid white;
+    border: 1px solid #fff;
     display: inline-block;
     position: relative;
     overflow: hidden;

@@ -34,7 +34,7 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private shareDataService: ShareDataService,
     private dataService: DataService,
     private bookingService: BookingService,
@@ -47,7 +47,7 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
     this.bookSeat();
     this.orderFood();
     this.confirmPaymentMethod();
-    // this.preventBack.preventBackButton();
+    this.preventBack.preventBackButton();
     $(document.body).addClass('booking');
     console.log(this.showtimeCode)
   }
@@ -207,7 +207,6 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
       const userLogin = JSON.parse(localStorage.getItem('user'));
       let tixInfo = new BookingInfo(parseInt(this.showtimeCode), userLogin.taiKhoan);
       tixInfo.danhSachVe = this.listSelectingSeat;
-      console.log('tixInfo', abc);
       const uri = "QuanLyDatVe/DatVe";
       this.subService_4 = this.dataService.bookTix(uri, tixInfo).subscribe(() => {
         Swal.fire({
@@ -215,9 +214,10 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
           type: 'success',
           timer: 4000,
           title: 'Booking Succeed!',
-          position: "top",
+          position: 'center',
           showConfirmButton: false
         })
+        window.location.href = "/";
       })
     }
   }

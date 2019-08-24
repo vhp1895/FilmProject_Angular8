@@ -9,7 +9,7 @@ import * as $ from "jquery";
 })
 export class HeaderComponent implements OnInit {
   sidebarOpen = false;
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
   name: String = "Your account";
   account: any;
   ngOnInit() {

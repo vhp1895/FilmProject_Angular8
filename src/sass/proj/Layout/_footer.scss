@@ -6,7 +6,7 @@
         margin: 0 auto;
         padding: 27px 15px 38px;
         a{
-            @include text(white, 28px, bold);
+            @include text(#fff, 28px, bold);
             position: relative;
             padding-top: 40px;
             display: block;

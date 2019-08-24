@@ -18,7 +18,7 @@
         left: 0;
         bottom: 201px;
         width: 100%;
-        color: white;
+        color: #fff;
         padding: 0 15px;
         h2 {
             font-size: 95px;
@@ -49,7 +49,7 @@
                     height: 1px;
                     top: 50%;
                     left: 0;
-                    background: white;
+                    background: #fff;
                     transform: translate(0, -50%);
                 }
             }
@@ -137,6 +137,7 @@
     .quickbook-col3 {
         background: $color-major;
         position: relative;
+        
         &::before {
             position: absolute;
             content: '';
@@ -197,7 +198,7 @@
             left: 50%;
             top: 50%;
             bottom: auto;
-            color:white;
+            color:#fff;
             transform: translate(-50%, -50%);
             text-align: center;
             h2 {

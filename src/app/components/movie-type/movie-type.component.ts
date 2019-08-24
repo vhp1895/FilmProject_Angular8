@@ -16,7 +16,7 @@ export class MovieTypeComponent implements OnInit, DoCheck {
   nowShowingList: any[] = [];
   comingSoonList: any[] = [];
   constructor(
-    private router: Router,
+    public router: Router,
     private shareDataService: ShareDataService) { }
 
   ngOnInit() {

@@ -6,49 +6,143 @@
     width: 100%;
     background: #1a1a19;
     z-index: 9999;
-    transition: all 0.5s;
-    .loaderContent {
+    transition: 1s ease-out;
+    .lds-heart {
         position: absolute;
-        top: 45%;
-        left: 45%;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: linear-gradient(#000, $color-major, #a2b2c4);
-        animation: animate 0.5s linear infinite;
-    }
-    .loaderContent span{
+        display: inline-block;
+
+        width: 64px;
+        height: 64px;
+        transform: rotate(45deg);
+        transform-origin: 32px 32px;
+      }
+    .lds-heart div {
+        top: 23px;
+        left: 19px;
         position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: linear-gradient(#000, $color-major, #a2b2c4);
-        animation: animate 0.5s linear infinite;
+        width: 26px;
+        height: 26px;
+        background: #fff;
+        animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
     }
-    .loaderContent span:nth-child(1){
-        filter: blur(5px)
-    }
-    .loaderContent span:nth-child(2){
-        filter: blur(10px)
-    }
-    .loaderContent span:nth-child(3){
-        filter: blur(25px)
-    }
-    .loaderContent span:nth-child(4){
-        filter: blur(50px)
-    }
-    .loaderContent::after {
+    .lds-heart div:after,
+    .lds-heart div:before {
+        content: " ";
         position: absolute;
-        content: '';
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        background: #1a1a19;
-        border-radius: 50%;
+        display: block;
+        width: 26px;
+        height: 26px;
+        background: #fff;
     }
+    .lds-heart div:before {
+        left: -17px;
+        border-radius: 50% 0 0 50%;
+    }
+    .lds-heart div:after {
+        top: -17px;
+        border-radius: 50% 50% 0 0;
+    }
+    // .loaderContent {
+    //     position: absolute;
+    //     top: 45%;
+    //     left: 45%;
+    //     transform: translate(-50%, -50%);
+    //     width: 100px;
+    //     height: 100px;
+    //     border-radius: 50%;
+    //     background: linear-gradient(#000, $color-major, #a2b2c4);
+    //     animation: animate 0.5s linear infinite;
+    // }
+    // .loaderContent span{
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 50%;
+    //     background: linear-gradient(#000, $color-major, #a2b2c4);
+    //     animation: animate 0.5s linear infinite;
+    // }
+    // .loaderContent span:nth-child(1){
+    //     filter: blur(5px)
+    // }
+    // .loaderContent span:nth-child(2){
+    //     filter: blur(10px)
+    // }
+    // .loaderContent span:nth-child(3){
+    //     filter: blur(25px)
+    // }
+    // .loaderContent span:nth-child(4){
+    //     filter: blur(50px)
+    // }
+    // .loaderContent::after {
+    //     position: absolute;
+    //     content: '';
+    //     top: 10px;
+    //     left: 10px;
+    //     right: 10px;
+    //     bottom: 10px;
+    //     background: #1a1a19;
+    //     border-radius: 50%;
+    // }
 }
 #loader.ninja {
     display: none;
 }
+
+.lds-heart {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    transform: rotate(45deg);
+    transform-origin: 32px 32px;
+  }
+.lds-heart div {
+    top: 23px;
+    left: 19px;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+}
+.lds-heart div:before {
+    left: -17px;
+    border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+    top: -17px;
+    border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+}
+  

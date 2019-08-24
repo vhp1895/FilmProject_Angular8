@@ -62,7 +62,7 @@
 //                         margin-top: 26px;
 //                         width:100%;
 //                         input::placeholder {
-//                             color: white;
+//                             color: #fff;
 //                         }
 //                     }
 //                     .form-check {
@@ -89,23 +89,18 @@
 //     }
 // }
 
-::ng-deep .mat-checkbox .mat-checkbox-frame {
-    border-color: #898989;
-  }
   
-::ng-deep .mat-checkbox-checked .mat-checkbox-background {
-    background-color: transparent !important;
-}
 
-::ng-deep .mat-form-field-label {
-    /*change color of label*/
-    color: white !important;
-}
-::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: white !important;
-}
-::ng-deep .mat-form-field-invalid .mat-form-field-label {
-    /*change color of label*/
-    color: red !important;
-}
+
+// ::ng-deep .mat-form-field-label {
+//     /*change color of label*/
+//     color: #fff !important;
+// }
+// ::ng-deep .mat-focused .mat-form-field-label {
+//     /*change color of label*/
+//     color: #fff !important;
+// }
+// ::ng-deep .mat-form-field-invalid .mat-form-field-label {
+//     /*change color of label*/
+//     color: red !important;
+// }

@@ -314,30 +314,7 @@
                         @include MediaQuery('ssm-1') {
                             min-width: 135px!important;
                         }
-                        svg path {
-                            @include MediaQuery('xl-3') {
-                                d: path("M 0 0 l 217 0 l -12 54 l -205 0 l 0 -54")!important;
-                            }
-                            @media (max-width: 1600px) {
-                                d: path("M 0 0 l 217 0 l -12 48 l -205 0 l 0 -48")!important;
-                            }
-                            @include MediaQuery('xl-1') {
-                                d: path("M 0 0 l 217 0 l -12 48 l -205 0 l 0 -48")!important;
-                            }
-                            @media (max-width: 1280px) {
-                                d: path("M 0 0 l 213 0 l -12 48 l -201 0 l 0 -48")!important;
-                            }
-                            @include MediaQuery('md') {
-                                fill: $color-major!important;
-                                d: path("M 0 0 l 190 0 l -12 48 l -178 0 l 0 -48")!important;
-                            }
-                            @include MediaQuery('sm-1') {
-                                d: path("M 0 0 l 190 0 l -12 42 l -178 0 l 0 -42")!important;
-                            }
-                            @include MediaQuery('ssm-1') {
-                                d: path("M 3 0 l 135 0 l -12 42 l -123 0 l 0 -42")!important;
-                            }
-                        }
+
                     }
                 }
             }

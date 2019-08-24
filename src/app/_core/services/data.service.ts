@@ -56,7 +56,11 @@ export class DataService {
   }
 
   bookTix(uri: string, tixInfo: BookingInfo): Observable<any> {
-    return this.http.post(Api + '/' + uri, tixInfo, httpOptions[1]).pipe(
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': 'Bearer '+ localStorage.getItem('accessToken')
+    });
+    return this.http.post(Api + '/' + uri, tixInfo, { headers: headers, responseType: 'text' }).pipe(
       tap(
         () => { }),
       catchError((err: HttpErrorResponse) => {
@@ -78,7 +82,6 @@ export class DataService {
         `body was: ${err.error}`);
     }
     // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
+    return throwError(err.error);
   }
 }

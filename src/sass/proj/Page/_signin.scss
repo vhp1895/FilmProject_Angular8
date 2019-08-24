@@ -62,11 +62,14 @@
                         margin-top: 26px;
                         width:100%;
                         input::placeholder {
-                            color: white;
+                            color: #fff;
+                        }
+                        .mat-form-field-label {
+                            color: #fff;
                         }
                     }
-                    .form-check {
-                        padding: 37px 0 0;
+                    .form-group.mat-form-field-invalid .mat-form-field-label {
+                        color: #f44336;
                     }
                     .form-link {
                         padding-top: 25px;
@@ -99,11 +102,11 @@
 
 ::ng-deep .mat-form-field-label {
     /*change color of label*/
-    color: white !important;
+    color: #fff !important;
 }
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: white !important;
+    color: #fff !important;
 }
 ::ng-deep .mat-form-field-invalid .mat-form-field-label {
     /*change color of label*/

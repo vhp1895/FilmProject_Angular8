@@ -11,6 +11,7 @@
                                 <mat-form-field class="form-group">
                                     <mat-label>Email ID</mat-label>
                                     <input matInput type="email" formControlName="email" required>
+                                    <mat-icon matSuffix>mail</mat-icon>
                                     <mat-error *ngIf="f.email.hasError('required')">Please enter your "Email Address".
                                         Password*
                                     </mat-error>
