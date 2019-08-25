@@ -64,6 +64,15 @@ figure {
     .container {
       max-width: 1370px; } }
 
+input:-webkit-autofill {
+  -webkit-transition-delay: 9999s;
+          transition-delay: 9999s;
+  -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+  transition: color 9999s ease-out, background-color 9999s ease-out; }
+
+.mat-input-element {
+  caret-color: #fff; }
+
 .owl-theme .owl-nav .owl-next, .owl-theme .owl-nav .owl-prev {
   width: 62px;
   height: 62px;
@@ -1755,10 +1764,12 @@ figure {
     .register .register-block .form-group {
       margin: 45px 0 0;
       width: 100%; }
-      .register .register-block .form-group input {
+      .register .register-block .form-group .mat-input-element {
         padding-bottom: 15px; }
       .register .register-block .form-group .mat-form-field-label {
         color: #fff; }
+      .register .register-block .form-group mat-icon.password {
+        cursor: pointer; }
     .register .register-block .form-group.mat-form-field-invalid .mat-form-field-label {
       color: #f44336; }
     .register .register-block .password-info {
@@ -1885,16 +1896,10 @@ figure {
         .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group {
           margin-top: 26px;
           width: 100%; }
-          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::-webkit-input-placeholder {
-            color: #fff; }
-          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input:-ms-input-placeholder {
-            color: #fff; }
-          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::-ms-input-placeholder {
-            color: #fff; }
-          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group input::placeholder {
-            color: #fff; }
           .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group .mat-form-field-label {
             color: #fff; }
+          .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group mat-icon.password {
+            cursor: pointer; }
         .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-group.mat-form-field-invalid .mat-form-field-label {
           color: #f44336; }
         .signin .signin-block .signin-table .signin-table-cell .welcome-block .form-link {

@@ -27,17 +27,16 @@ export class WebPhimComponent implements OnInit {
   ngOnInit() {
     this.getMovieList();
     if (!this.router.url.includes('booking-detail')) {
-      if (localStorage.getItem('orderDetails') ||
-          localStorage.getItem('OrderDetails') ||
-          localStorage.getItem('listSelectingSeat') ||
-          localStorage.getItem('showtimeCode')) 
-      {
+      if (localStorage.getItem('orderDetails'))
         localStorage.removeItem('orderDetails')
-        localStorage.removeItem('OrderDetails');
-        localStorage.removeItem('listSelectingSeat');
-        localStorage.removeItem('showtimeCode');
-      }
-
+      if (localStorage.getItem('OrderDetails') )
+        localStorage.removeItem('OrderDetails')
+      if (localStorage.getItem('listSelectingSeat'))
+        localStorage.removeItem('listSelectingSeat')
+      if (localStorage.getItem('hallInfo'))
+        localStorage.removeItem('hallInfo')
+      if (localStorage.getItem('showtimeCode'))
+        localStorage.removeItem('showtimeCode')
     }
 
   }

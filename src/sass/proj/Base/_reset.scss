@@ -6,9 +6,7 @@
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
-// html {
-//     // scroll-behavior: smooth;
-// }
+
 body {
     background: #1a1a19 url('../../assets/images/bg-paten.png') repeat;
     font-family: 'Roboto', sans-serif;
@@ -37,4 +35,12 @@ figure {
     @media (min-width: 1440px) {
         max-width: 1370px;
     }
+}
+
+input:-webkit-autofill {
+    transition-delay: 9999s;
+    transition: color 9999s ease-out, background-color 9999s ease-out;
+}
+.mat-input-element {
+    caret-color: #fff;
 }

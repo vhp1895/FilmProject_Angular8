@@ -42,15 +42,16 @@
             padding: 0 0 0 62px;
         }
         .form-group {
-            
-
-            margin: 45px 0 0;
-            width: 100%;
-            input {
+            .mat-input-element {
                 padding-bottom: 15px;
             }
+            margin: 45px 0 0;
+            width: 100%;
             .mat-form-field-label {
                 color: #fff;
+            }
+            mat-icon.password {
+                cursor: pointer;
             }
         }
         .form-group.mat-form-field-invalid .mat-form-field-label {

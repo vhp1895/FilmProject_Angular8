@@ -61,11 +61,11 @@
                     .form-group {
                         margin-top: 26px;
                         width:100%;
-                        input::placeholder {
-                            color: #fff;
-                        }
                         .mat-form-field-label {
                             color: #fff;
+                        }
+                        mat-icon.password {
+                            cursor: pointer;
                         }
                     }
                     .form-group.mat-form-field-invalid .mat-form-field-label {
