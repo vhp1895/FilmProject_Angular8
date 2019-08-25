@@ -52,13 +52,18 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
     console.log(this.showtimeCode)
   }
   onRefresh() {
-    this.showtimeCode = JSON.parse(localStorage.getItem('showtimeCode'));
-    localStorage.removeItem('showtimeCode');
+    if(localStorage.getItem('showtimeCode')) {
+      this.showtimeCode = JSON.parse(localStorage.getItem('showtimeCode'));
+      localStorage.removeItem('showtimeCode');
+      console.log('after', this.showtimeCode)
+    }
+    
+    if(localStorage.getItem('hallInfo')) {
+      this.hallInfo = JSON.parse(localStorage.getItem('hallInfo'));
+      console.log('refreshed', this.hallInfo);
+      localStorage.removeItem('hallInfo');
+    }
 
-    console.log('after', this.showtimeCode)
-    this.hallInfo = JSON.parse(localStorage.getItem('hallInfo'));
-    console.log('refreshed', this.hallInfo);
-    localStorage.removeItem('hallInfo');
 
     if (!this.router.url.includes('seats')) {
       this.listSelectingSeat = JSON.parse(localStorage.getItem('listSelectingSeat'));
@@ -72,7 +77,9 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
   }
   @HostListener('window:beforeunload', ['$event'])
   saveData() {
-    localStorage.setItem('showtimeCode', JSON.stringify(this.showtimeCode));
+    if(this.showtimeCode)
+      localStorage.setItem('showtimeCode', JSON.stringify(this.showtimeCode));
+    if(this.hallInfo)
     localStorage.setItem('hallInfo', JSON.stringify(this.hallInfo));
 
     if (!this.router.url.includes('seats')) {
@@ -212,12 +219,12 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
         Swal.fire({
           toast: true,
           type: 'success',
-          timer: 4000,
+          timer: 2000,
           title: 'Booking Succeed!',
           position: 'center',
           showConfirmButton: false
         })
-        window.location.href = "/";
+        setTimeout(() => {window.location.href = "/"}, 2000);
       })
     }
   }

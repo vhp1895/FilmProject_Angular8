@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Form, Validators } from '@angular/forms';
 import { MovieService } from 'src/app/_core/services/movie.service';
+import { ShareDataService } from 'src/app/_core/shared/share-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quick-book',
@@ -15,10 +17,14 @@ export class QuickBookComponent implements OnInit {
   queryShowtime: any;
   showtimeCode: any;
   isOpen: boolean = false;
+  theaterName: string;
+  movieName: string;
+  hour: string;
   constructor(
     private formBuilder: FormBuilder,
     private movieService: MovieService,
-
+    private shareDataService: ShareDataService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -35,7 +41,13 @@ export class QuickBookComponent implements OnInit {
   get f() { return this.quickBookForm.controls; }
 
   bookNow() {
-    window.location.href = `booking-detail?code=${this.showtimeCode}`;
+    let hallInfo = {
+      movieName: this.movieName,
+      theaterName: this.theaterName,
+      showtime: this.hour
+    }
+    this.shareDataService.sharingHallInfo(hallInfo);
+    this.router.navigate(['booking-detail'], {queryParams: {code:this.showtimeCode}});
   }
 
   toggle(value) {
@@ -51,7 +63,9 @@ export class QuickBookComponent implements OnInit {
     for (let i = 0; i < this.Cinemas.length; i++) {
       if (this.Cinemas[i].theaterCode === source.value) {
         this.queryCine = this.Cinemas[i];
-        console.log(this.queryCine);
+        this.theaterName = this.Cinemas[i].theaterName;
+        console.log('queryCine', this.queryCine);
+        console.log('theaterName', this.theaterName);
         break;
       }
     }
@@ -60,7 +74,9 @@ export class QuickBookComponent implements OnInit {
     for (let i = 0; i < this.queryCine.movieList.length; i++) {
       if (this.queryCine.movieList[i].movieName === source.value) {
         this.queryMovie = this.queryCine.movieList[i];
+        this.movieName = this.queryCine.movieList[i].movieName;
         console.log(this.queryMovie);
+        console.log('movieName', this.movieName);
         break;
       }
     }
@@ -78,7 +94,9 @@ export class QuickBookComponent implements OnInit {
     for (let i = 0; i < this.queryShowtime.length; i++) {
       if (this.queryShowtime[i].showtimeCode === source.value) {
         this.showtimeCode = this.queryShowtime[i].showtimeCode;
+        this.hour = this.queryShowtime[i].hour;
         console.log(this.showtimeCode);
+        console.log('hour', this.hour);
         break;
       }
     }
