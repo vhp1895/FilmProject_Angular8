@@ -145,7 +145,7 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
       ticketInfo.push({
         seatType: seat.seatType,
         qty: 1,
-        price: seat.price
+        giaVe: seat.giaVe
       })
     }
   }
@@ -178,7 +178,7 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
       tix_subTotal += seat.giaVe;
     })
     this.orderDetails.selectedFnbInfo.forEach(fItem => {
-      fnb_subTotal += fItem.qty * fItem.giaVe;
+      fnb_subTotal += fItem.qty * fItem.price;
     })
     this.totalPrice = tix_subTotal + fnb_subTotal;
 
@@ -195,16 +195,6 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
   }
 
   bookingFlow() {
-    let abc = {
-      maLichChieu: 16000,
-      danhSachVe: [
-        {
-          maGhe: 49641,
-          giaVe: 75000
-        }
-      ],
-      taiKhoanNguoiDung: "phucknmk@gmail.com"
-    }
     if (this.router.url.includes('seats')) {
       this.router.navigate([`/booking-detail/fnb`]);
     } else if (this.router.url.includes('fnb')) {

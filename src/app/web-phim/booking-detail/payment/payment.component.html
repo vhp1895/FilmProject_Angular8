@@ -22,8 +22,8 @@
                 <ul>
                     <li *ngFor="let selectticket of OrderDetails.selectedTicketInfo">
                         <span class="col1">{{selectticket.seatType | uppercase}}</span>
-                        <span class="col2">{{selectticket.qty}} X {{selectticket.price | number}} VND</span>
-                        <span class="col3">{{(selectticket.qty * selectticket.price) | number}} VND</span>
+                        <span class="col2">{{selectticket.qty}} X {{selectticket.giaVe | number}} VND</span>
+                        <span class="col3">{{(selectticket.qty * selectticket.giaVe) | number}} VND</span>
                     </li>
                     <li class="sub-total">
                         <span class="col1">Sub Total</span>

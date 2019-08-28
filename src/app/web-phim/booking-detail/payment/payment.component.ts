@@ -51,7 +51,7 @@ export class PaymentComponent implements OnInit {
     let subTotalTix = 0;
     let subTotalFnb = 0;
     this.OrderDetails.selectedTicketInfo.forEach(item => {
-      subTotalTix += item.price * item.qty;
+      subTotalTix += item.giaVe * item.qty;
     })
     this.SubTotalTix = subTotalTix;
     this.OrderDetails.selectedFnbInfo.forEach(item => {
