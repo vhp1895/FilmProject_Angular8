@@ -175,10 +175,10 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
     let tix_subTotal = 0;
     let fnb_subTotal = 0;
     this.listSelectingSeat.forEach(seat => {
-      tix_subTotal += seat.price;
+      tix_subTotal += seat.giaVe;
     })
     this.orderDetails.selectedFnbInfo.forEach(fItem => {
-      fnb_subTotal += fItem.qty * fItem.price;
+      fnb_subTotal += fItem.qty * fItem.giaVe;
     })
     this.totalPrice = tix_subTotal + fnb_subTotal;
 
